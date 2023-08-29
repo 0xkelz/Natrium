@@ -1,99 +1,39 @@
-import { ConnectWallet } from "@thirdweb-dev/react";
 import "./styles/Home.css";
+import NavBar from "./components/navBar";
 
-export default function Home() {
+import { useState } from "react";
+import { UserData } from "./Data";
+import DoughnutChart from "./components/DoughnutChart";
+import { id } from "ethers/lib/utils";
+import Header from "./components/header";
+import Tvl from "./components/tvl";
+
+const Home = () => {
+  const [userData, setUserData] = useState({
+    labels: UserData.map((data) => data.id),
+    datasets: [
+      {
+        label: "Supply",
+        data: UserData.map((data) => data["total-supply"]),
+        backgroundColor: ["#fff", "blue", "orange"],
+        borderColor: "#000",
+      },
+    ],
+  });
   return (
-    <main className="main">
-      <div className="container">
-        <div className="header">
-          <h1 className="title">
-            Welcome to{" "}
-            <span className="gradient-text-0">
-              <a
-                href="https://thirdweb.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                thirdweb.
-              </a>
-            </span>
-          </h1>
-
-          <p className="description">
-            Get started by configuring your desired network in{" "}
-            <code className="code">src/index.js</code>, then modify the{" "}
-            <code className="code">src/App.js</code> file!
-          </p>
-
-          <div className="connect">
-            <ConnectWallet
-              dropdownPosition={{
-                side: "bottom",
-                align: "center",
-              }}
-            />
-          </div>
+    <div className="bg-rich-black h-[2000px] p-4">
+      <NavBar />
+      <Header />
+      <div className=" mt-10 flex justify-center align-middle flex-wrap gap-8 lg:gap-12 mt-16 lg:mt-28">
+        <div className="bg-bg-gray border-2 border-border-gray rounded-lg">
+          <DoughnutChart chartData={userData} />
         </div>
-
-        <div className="grid">
-          <a
-            href="https://portal.thirdweb.com/"
-            className="card"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/images/portal-preview.png"
-              alt="Placeholder preview of starter"
-            />
-            <div className="card-text">
-              <h2 className="gradient-text-1">Portal ➜</h2>
-              <p>
-                Guides, references, and resources that will help you build with
-                thirdweb.
-              </p>
-            </div>
-          </a>
-
-          <a
-            href="https://thirdweb.com/dashboard"
-            className="card"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/images/dashboard-preview.png"
-              alt="Placeholder preview of starter"
-            />
-            <div className="card-text">
-              <h2 className="gradient-text-2">Dashboard ➜</h2>
-              <p>
-                Deploy, configure, and manage your smart contracts from the
-                dashboard.
-              </p>
-            </div>
-          </a>
-
-          <a
-            href="https://thirdweb.com/templates"
-            className="card"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/images/templates-preview.png"
-              alt="Placeholder preview of templates"
-            />
-            <div className="card-text">
-              <h2 className="gradient-text-3">Templates ➜</h2>
-              <p>
-                Discover and clone template projects showcasing thirdweb
-                features.
-              </p>
-            </div>
-          </a>
+        <div className="bg-bg-gray border-2 border-border-gray rounded-lg">
+          <Tvl />
         </div>
       </div>
-    </main>
+    </div>
   );
-}
+};
+
+export default Home;
