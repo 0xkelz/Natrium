@@ -11,7 +11,7 @@ const DoughnutChart = ({ chartData }) => {
         data={chartData}
         options={{
           cutout: "80%",
-          radius: "90%",
+          radius: "70%",
           layout: {
             padding: 0,
           },
@@ -20,7 +20,7 @@ const DoughnutChart = ({ chartData }) => {
               text: "Supply/Borrow",
             },
             legend: {
-              position: "right",
+              position: "top",
               labels: {
                 boxWidth: 15,
               },

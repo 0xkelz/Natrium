@@ -7,6 +7,7 @@ import DoughnutChart from "./components/DoughnutChart";
 import { id } from "ethers/lib/utils";
 import Header from "./components/header";
 import Tvl from "./components/tvl";
+import Markets from "./components/markets";
 
 const Home = () => {
   const [userData, setUserData] = useState({
@@ -24,13 +25,16 @@ const Home = () => {
     <div className="bg-rich-black h-[2000px] p-4">
       <NavBar />
       <Header />
-      <div className=" mt-10 flex justify-center align-middle flex-wrap gap-8 lg:gap-12 mt-16 lg:mt-28">
+      <div className="flex justify-center align-middle flex-wrap gap-8 lg:gap-10 mt-16 lg:mt-28">
         <div className="bg-bg-gray border-2 border-border-gray rounded-lg">
           <DoughnutChart chartData={userData} />
         </div>
         <div className="bg-bg-gray border-2 border-border-gray rounded-lg">
           <Tvl />
         </div>
+      </div>
+      <div className=" flex justify-center">
+        <Markets />
       </div>
     </div>
   );

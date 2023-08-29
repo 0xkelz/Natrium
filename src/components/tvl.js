@@ -103,7 +103,7 @@ const Tvl = () => {
       <h1 className="text-snow-white font-medium text-xl mt-2 mb-2 text-center lg:text-3xl lg:mt-4">
         Total Value Locked{" "}
       </h1>
-      <div className="w-72 h-72 flex justify-center lg:w-[30rem] lg:h-[30rem]">
+      <div className="w-72 h-72 flex justify-center lg:w-[40rem] lg:h-[30rem] xl:w-[45rem] 2xl:w-[55rem]">
         <ResponsiveContainer width="80%" height="80%">
           <AreaChart data={utcObjectsArray}>
             <defs>
