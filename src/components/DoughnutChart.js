@@ -3,7 +3,7 @@ import { Chart as ChartJS } from "chart.js/auto";
 
 const DoughnutChart = ({ chartData }) => {
   return (
-    <div className=" w-72 h-72 lg:w-[30rem] lg:h-[30rem]">
+    <div className=" w-72 lg:w-[30rem]">
       <h1 className="text-snow-white font-medium text-xl mt-2 text-center lg:text-3xl lg:mt-4">
         Supply/Borrow{" "}
       </h1>

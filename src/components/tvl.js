@@ -103,12 +103,12 @@ const Tvl = () => {
       <h1 className="text-snow-white font-medium text-xl mt-2 mb-2 text-center lg:text-3xl lg:mt-4">
         Total Value Locked{" "}
       </h1>
-      <div className="w-72 h-72 flex justify-center lg:w-[40rem] lg:h-[30rem] xl:w-[45rem] 2xl:w-[55rem]">
-        <ResponsiveContainer width="80%" height="80%">
+      <div className="w-72 h-60 flex justify-center items-center my-auto lg:w-[40rem] lg:h-[20rem] xl:w-[50rem] 2xl:w-[55rem]">
+        <ResponsiveContainer width="80%" height="90%">
           <AreaChart data={utcObjectsArray}>
             <defs>
               <linearGradient id="color" x1={0} y1={0} x2={0} y2={1}>
-                <stop offset="0%" stopColor="#0077b6" stopOpacity={0.4}></stop>
+                <stop offset="0%" stopColor="#0077b6" stopOpacity={0.8}></stop>
                 <stop
                   offset="95%"
                   stopColor="#0077b6"
@@ -123,7 +123,7 @@ const Tvl = () => {
             <Area
               type="monotone"
               dataKey="tvl"
-              stroke="#0077b6"
+              stroke="#00b4d8"
               fill="url(#color)"
             />
           </AreaChart>

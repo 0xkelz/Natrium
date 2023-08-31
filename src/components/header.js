@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="flex flex-col justify-center mt-14 ">
+    <div className="flex flex-col justify-center mt-10 ">
       <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-sky-200 text-6xl  text-center font-bold inline-block tracking-widest lg:text-[8rem]">
         NATRIUM
       </h1>
